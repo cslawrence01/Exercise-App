@@ -28,35 +28,56 @@ export const AddExercisePage = () => {
   return (
     <div>
       <h1>Add Exercise</h1>
-      <input
-        type="text"
-        placeholder="Enter name here"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="number"
-        value={reps}
-        placeholder="Enter reps here"
-        onChange={(e) => setReps(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Enter weight here"
-        value={weight}
-        onChange={(e) => setWeight(e.target.value)}
-      />
-      <select value={unit} onChange={(e) => setUnit(e.target.value)}>
-        <option value="">Enter unit here</option>
-        <option value="kgs">kgs</option>
-        <option value="lbs">lbs</option>
-      </select>
-      <input
-        type="text"
-        placeholder="Enter date here"
-        value={date}
-        onChange={(e) => setDate(e.target.value)}
-      />
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Reps</th>
+            <th>Weight</th>
+            <th>Unit</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                value={reps}
+                onChange={(e) => setReps(e.target.value)}
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                value={weight}
+                onChange={(e) => setWeight(e.target.value)}
+              />
+            </td>
+            <td>
+              <select value={unit} onChange={(e) => setUnit(e.target.value)}>
+                <option value="kgs">kgs</option>
+                <option value="lbs">lbs</option>
+              </select>
+            </td>
+            <td>
+              <input
+                type="text"
+                placeholder="mm-dd-yy"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
       <button onClick={addExercise}>Add</button>
     </div>
   );
